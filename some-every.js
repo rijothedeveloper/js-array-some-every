@@ -20,11 +20,9 @@ Examples:
 
 function hasAZero(num) {
     const arr = Array.from(String(num))
-    //return Array.from(num).some( (element) => element === 0);
-    const res = arr.some( (element) => {
+    return arr.some( (element) => {
         return element == 0;
     })
-    return res;
 }
 
 /*
@@ -49,12 +47,8 @@ Examples:
 
 function hasNoDuplicates(arr) {
     const noDupliArr = [];
-    return arr.every( function (element, index) {
-        if(noDupliArr.indexOf(element) === -1) {
-            noDupliArr.push(element);
-            return true;
-        }
-        return false;
+    return arr.every( function (element) {
+        return arr.indexOf(element) === arr.lastIndexOf(element);
     });
 }
 
